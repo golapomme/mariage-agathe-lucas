@@ -180,9 +180,11 @@ function construireOnglets_(book, form) {
   var invCols = [['Prénom', Q.prenom], ['Nom', Q.nom], ['Civile (ven.)', Q.civile], ['Religieuse (sam.)', Q.religieuse],
     ['Réception (sam.)', Q.reception], ['Brunch (dim.)', Q.brunch], ['Couchage', Q.dormir], ['Nuit(s)', Q.nuits],
     ['Régime', Q.regime], ['Allergies', Q.allergies], ['E-mail', Q.email], ['Téléphone', Q.tel], ['Message', Q.message]];
-  inv.getRange(1, 1, 1, invCols.length).setValues([invCols.map(function (c) { return c[0]; })]);
-  inv.getRange('A2').setFormula('=IFERROR(SORT(FILTER(' + cols_(invCols) + ',' + has + '),2,TRUE,1,TRUE),"En attente des premières réponses")');
-  styleTable_(inv, invCols.length, [120, 140, 120, 130, 130, 120, 140, 220, 200, 240, 220, 140, 300]);
+  inv.getRange(1, 1, 1, invCols.length + 1).setValues([invCols.map(function (c) { return c[0]; }).concat(['N° ligne'])]);
+  // Dernière colonne : n° de ligne dans « Réponses » (utilisé par le menu 💍 Mariage du tableur)
+  var numLigne = 'SEQUENCE(ROWS(INDEX(INDIRECT("\'' + RESP + '\'!A2:AZ2000"),0,1)))+1';
+  inv.getRange('A2').setFormula('=IFERROR(SORT(FILTER(' + cols_(invCols).slice(0, -1) + ',' + numLigne + '),' + has + '),2,TRUE,1,TRUE),"En attente des premières réponses")');
+  styleTable_(inv, invCols.length + 1, [120, 140, 120, 130, 130, 120, 140, 220, 200, 240, 220, 140, 300, 70]);
   var area = inv.getRange(2, 3, 1999, 5);
   inv.setConditionalFormatRules([
     SpreadsheetApp.newConditionalFormatRule().whenTextEqualTo('Oui').setBackground('#E7F0E4').setFontColor('#2F5D2A').setRanges([area]).build(),

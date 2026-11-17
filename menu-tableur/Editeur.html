@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;padding:18px 16px 90px;background:#FAF7F2;color:#292524;font:13px/1.45 Arial,sans-serif}
+  h2{font:400 21px Georgia,serif;color:#682F40;margin:0 0 2px}
+  .sub{color:#7A716C;font-size:12px;margin:0 0 6px}
+  fieldset{border:0;border-top:1px solid #D6C1A3;margin:16px 0 0;padding:10px 0 0}
+  legend{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#682F40;font-weight:bold;padding-right:8px}
+  .f{margin:9px 0 0}
+  .f > span{display:block;font-weight:bold;font-size:12px;margin-bottom:4px}
+  .f > span i{color:#682F40;font-style:normal}
+  input[type=text],textarea{width:100%;padding:7px 9px;border:1px solid #DCD2C7;border-radius:4px;background:#fff;font:inherit;color:inherit}
+  input[type=text]:focus,textarea:focus{outline:2px solid #E8C8C5;border-color:#682F40}
+  textarea{min-height:54px;resize:vertical}
+  .seg{display:flex;gap:4px}
+  .seg label{flex:1;text-align:center;padding:6px 2px;border:1px solid #DCD2C7;border-radius:4px;background:#fff;cursor:pointer;font-size:12px;user-select:none}
+  .seg input{position:absolute;opacity:0;pointer-events:none}
+  .seg label:has(input:checked){background:#682F40;border-color:#682F40;color:#FAF7F2}
+  .seg label.non:has(input:checked){background:#7A716C;border-color:#7A716C}
+  .seg label.peut:has(input:checked){background:#B58A2C;border-color:#B58A2C}
+  .coches label{display:flex;align-items:center;gap:7px;padding:3px 0;cursor:pointer}
+  .coches input{accent-color:#682F40;width:15px;height:15px}
+  .bar{position:fixed;left:0;right:0;bottom:0;padding:12px 16px;background:#FAF7F2;border-top:1px solid #D6C1A3;display:flex;gap:8px}
+  button{flex:1;padding:10px;border-radius:4px;font:bold 12px Arial,sans-serif;letter-spacing:.06em;cursor:pointer}
+  .ok{background:#682F40;color:#FAF7F2;border:1px solid #682F40}
+  .ok:disabled{opacity:.6;cursor:wait}
+  .ann{background:transparent;color:#292524;border:1px solid #292524}
+  .msg{margin:12px 0 0;padding:9px 11px;border-radius:4px;font-size:12px;display:none}
+  .msg.err{display:block;background:#F6E4E4;color:#7A2B2B}
+  .msg.bon{display:block;background:#E7F0E4;color:#2F5D2A}
+  .load{color:#7A716C;padding:20px 0}
+</style>
+</head>
+<body>
+  <h2 id="titre">Chargement…</h2>
+  <p class="sub" id="sous"></p>
+  <div id="form"><p class="load">Lecture de la réponse…</p></div>
+  <div class="msg" id="msg"></div>
+  <div class="bar">
+    <button class="ann" type="button" onclick="google.script.host.close()">Fermer</button>
+    <button class="ok" type="button" id="btn" onclick="enregistrer()" disabled>Enregistrer</button>
+  </div>
+
+<script>
+  var LIGNE = Number('<?= ligne ?>') || 0;
+  var CHAMPS = [], ORIGINE = '';
+
+  function el(tag, attrs, txt) {
+    var e = document.createElement(tag);
+    for (var k in (attrs || {})) e.setAttribute(k, attrs[k]);
+    if (txt) e.textContent = txt;
+    return e;
+  }
+
+  function rendre(d) {
+    CHAMPS = d.champs;
+    var v = d.valeurs;
+    ORIGINE = LIGNE ? (String(v['Prénom']).trim() + '|' + String(v['Nom']).trim()) : '';
+    document.getElementById('titre').textContent = LIGNE ? ((v['Prénom'] + ' ' + v['Nom']).trim() || 'Invité') : 'Nouvel invité';
+    document.getElementById('sous').textContent = LIGNE
+      ? 'Ligne ' + LIGNE + ' de l’onglet Réponses'
+      : 'Réponse reçue par téléphone, SMS ou de vive voix';
+    var box = document.getElementById('form');
+    box.innerHTML = '';
+    var groupe = box;
+    CHAMPS.forEach(function (c, idx) {
+      if (c.groupe) {
+        groupe = el('fieldset');
+        groupe.appendChild(el('legend', null, c.groupe));
+        box.appendChild(groupe);
+      }
+      var f = el('div', { 'class': 'f' });
+      var lab = el('span', null, c.court || c.titre);
+      if (c.requis) { var star = el('i', null, ' *'); lab.appendChild(star); }
+      f.appendChild(lab);
+      var val = v[c.titre] || '';
+
+      if (c.type === 'choix') {
+        var seg = el('div', { 'class': 'seg' });
+        c.options.forEach(function (o) {
+          var l = el('label', { 'class': o === 'Non' ? 'non' : (o === 'Oui' ? '' : 'peut') });
+          var r = el('input', { type: 'radio', name: 'c' + idx, value: o });
+          if (val === o) r.checked = true;
+          l.appendChild(r);
+          l.appendChild(document.createTextNode(o === 'Je ne sais pas encore' ? 'Peut-être' : o));
+          l.title = o;
+          seg.appendChild(l);
+        });
+        f.appendChild(seg);
+      } else if (c.type === 'coches') {
+        var parts = val ? val.split(', ') : [];
+        var autres = parts.filter(function (p) { return c.options.indexOf(p) < 0; });
+        var co = el('div', { 'class': 'coches' });
+        c.options.forEach(function (o) {
+          var l = el('label');
+          var cb = el('input', { type: 'checkbox', name: 'c' + idx, value: o });
+          if (parts.indexOf(o) >= 0) cb.checked = true;
+          l.appendChild(cb);
+          l.appendChild(document.createTextNode(o));
+          co.appendChild(l);
+        });
+        var au = el('input', { type: 'text', id: 'autre' + idx, placeholder: 'Autre (à préciser)' });
+        au.value = autres.join(', ');
+        co.appendChild(au);
+        f.appendChild(co);
+      } else if (c.type === 'zone') {
+        var ta = el('textarea', { id: 'c' + idx });
+        ta.value = val;
+        f.appendChild(ta);
+      } else {
+        var it = el('input', { type: 'text', id: 'c' + idx });
+        it.value = val;
+        f.appendChild(it);
+      }
+      groupe.appendChild(f);
+    });
+    document.getElementById('btn').disabled = false;
+    var first = document.getElementById('c0');
+    if (first && !LIGNE) first.focus();
+  }
+
+  function collecter() {
+    var out = {};
+    CHAMPS.forEach(function (c, idx) {
+      if (c.type === 'choix') {
+        var r = document.querySelector('input[name="c' + idx + '"]:checked');
+        out[c.titre] = r ? r.value : '';
+      } else if (c.type === 'coches') {
+        var vals = [];
+        document.querySelectorAll('input[name="c' + idx + '"]:checked').forEach(function (cb) { vals.push(cb.value); });
+        var au = document.getElementById('autre' + idx).value.trim();
+        if (au) vals.push(au);
+        out[c.titre] = vals.join(', ');
+      } else {
+        out[c.titre] = document.getElementById('c' + idx).value.trim();
+      }
+    });
+    return out;
+  }
+
+  function message(txt, ok) {
+    var m = document.getElementById('msg');
+    m.className = 'msg ' + (ok ? 'bon' : 'err');
+    m.textContent = txt;
+  }
+
+  function enregistrer() {
+    var btn = document.getElementById('btn');
+    btn.disabled = true;
+    btn.textContent = 'Enregistrement…';
+    google.script.run
+      .withSuccessHandler(function (txt) {
+        message(txt, true);
+        btn.textContent = 'Enregistré';
+        setTimeout(function () { google.script.host.close(); }, 1300);
+      })
+      .withFailureHandler(function (e) {
+        message(e.message || String(e), false);
+        btn.disabled = false;
+        btn.textContent = 'Enregistrer';
+      })
+      .enregistrerInvite(LIGNE, collecter(), ORIGINE);
+  }
+
+  google.script.run
+    .withSuccessHandler(rendre)
+    .withFailureHandler(function (e) {
+      document.getElementById('titre').textContent = 'Erreur';
+      document.getElementById('form').innerHTML = '';
+      message(e.message || String(e), false);
+    })
+    .lireInvite(LIGNE);
+</script>
+</body>
+</html>

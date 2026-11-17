@@ -116,6 +116,23 @@ Toutes les réponses arrivent automatiquement dans l'onglet **`Réponses`**. N'y
 
 ---
 
+## Menu « 💍 Mariage » du tableur : modifier, supprimer, ajouter
+
+Le tableur possède un menu **💍 Mariage** (à droite de « Aide »). Il vient d'un script attaché au tableur (*Extensions → Apps Script*, projet « Menu Mariage (tableur) ») ; une copie se trouve dans le dossier `menu-tableur/` de ce dépôt.
+
+| Action | Comment faire |
+|---|---|
+| **✏️ Modifier un invité** | Cliquez sur sa ligne dans l'onglet **Invités** (ou **Réponses**), puis *💍 Mariage → Modifier l'invité sélectionné*. Un panneau s'ouvre à droite avec toutes ses réponses : boutons Oui / Non / Peut-être, cases pour les régimes, champs texte. **Enregistrer** met à jour le tableur et le tableau de bord. |
+| **🗑️ Supprimer un invité** | Cliquez sur sa ligne, puis *💍 Mariage → Supprimer l'invité sélectionné* et confirmez. La réponse est retirée **du tableur et du formulaire**. Action définitive. |
+| **➕ Ajouter une réponse** | Pour un invité qui répond par téléphone ou SMS : *💍 Mariage → Ajouter une réponse reçue hors formulaire*. La ligne est marquée d'une note « Ajouté manuellement ». |
+
+Bon à savoir :
+- La colonne **N° ligne** de l'onglet Invités sert au menu pour retrouver la bonne réponse : ne la supprimez pas.
+- Une modification faite depuis le menu est enregistrée dans le tableur. Si l'invité modifie ensuite lui-même sa réponse avec son lien « Modifier votre réponse », c'est sa nouvelle version qui s'affiche.
+- La première utilisation demande une autorisation Google (*Continuer → votre compte → Paramètres avancés → Accéder… → Tout sélectionner → Continuer*). Chaque personne qui utilise le menu (par exemple Agathe ou Lucas, une fois le tableur partagé) devra l'autoriser une fois de son côté.
+
+---
+
 ## 5. Brancher le formulaire sur le site
 
 Dans `index.html`, cherchez le bloc `CONFIG` (vers la fin du fichier) :
