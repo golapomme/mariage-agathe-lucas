@@ -166,6 +166,10 @@ function spark_(cell, max, c1, c2) {
 }
 
 function construireOnglets_(book, form) {
+  // Les formules sont écrites en syntaxe anglaise : on passe temporairement le tableur en en_US
+  var locInit = book.getSpreadsheetLocale();
+  book.setSpreadsheetLocale('en_US');
+  SpreadsheetApp.flush();
   PropertiesService.getScriptProperties().setProperty('SHEET_ID', book.getId());
   var has = col_(Q.prenom) + '<>""';
   var hasN = '(' + has + ')';
@@ -282,6 +286,8 @@ function construireOnglets_(book, form) {
 
   db.setFrozenRows(3);
   book.setActiveSheet(db);
+  SpreadsheetApp.flush();
+  book.setSpreadsheetLocale(locInit);
 }
 
 function section_(sh, row, title) {
