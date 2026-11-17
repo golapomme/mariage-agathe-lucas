@@ -156,7 +156,8 @@ function creerFormulaire_() {
 /* ============ 3. ONGLETS + TABLEAU DE BORD ============ */
 // Colonne d'une question dans l'onglet Réponses, retrouvée par son intitulé
 function col_(title) {
-  return "INDEX('" + RESP + "'!$A$2:$AZ$2000,0,MATCH(\"" + title + "\",'" + RESP + "'!$1:$1,0))";
+  // INDIRECT : la plage ne se décale pas quand Google Forms insère une nouvelle réponse
+  return "INDEX(INDIRECT(\"'" + RESP + "'!A2:AZ2000\"),0,MATCH(\"" + title + "\",'" + RESP + "'!$1:$1,0))";
 }
 function cols_(list) { return 'HSTACK(' + list.map(function (c) { return col_(c[1]); }).join(',') + ')'; }
 function eq_(title, v) { return '(' + col_(title) + '="' + v + '")'; }

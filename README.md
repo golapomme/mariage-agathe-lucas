@@ -1,5 +1,18 @@
 # Site de mariage — Agathe & Lucas · 21 & 22 mai 2027
 
+> **En ligne :** https://golapomme.github.io/mariage-agathe-lucas/
+>
+> | | Lien |
+> |---|---|
+> | Formulaire (lien invités) | https://docs.google.com/forms/d/e/1FAIpQLSeMwUPZs_3w3ASEm2F7NYRsGuaWLL5ZWKnDQ_XUmB3mNw3AMw/viewform |
+> | Modifier le formulaire | https://docs.google.com/forms/d/13U4rc7AHxGZVkDGcZtFbBOJtygYr15AT-bNmmqlztX8/edit |
+> | Tableur des réponses + tableau de bord | https://docs.google.com/spreadsheets/d/1LHAwqEcM5tatPhNg6HB6D-p5kPgezwk7Y3RxAQOBlC0/edit |
+> | Script Apps Script | https://script.google.com/home/projects/1JTYF8qgoGvolHRe2HHEOCZJjYSZ8p2FrMvDgc7spN1nYjtBEyoSSIU6w/edit |
+>
+> Tout appartient au compte Google axeldavidlebastard@gmail.com. Pour donner accès aux mariés : bouton **Partager** du tableur et du formulaire → rôle *Éditeur*.
+>
+> **Mettre à jour le site :** modifier `index.html` directement sur GitHub (icône crayon → *Commit changes*) ; la nouvelle version est en ligne en 1 à 2 minutes.
+
 Guide complet : mise en place du formulaire, du tableur, personnalisation et mise en ligne.
 
 **Contenu du dossier**
