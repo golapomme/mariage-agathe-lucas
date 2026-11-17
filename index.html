@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Agathe &amp; Lucas — 21 &amp; 22 mai 2027</title>
-<meta name="description" content="Agathe & Lucas se marient les 21 et 22 mai 2027 en Normandie. Programme, lieux, hébergement et confirmation de présence.">
-<meta name="theme-color" content="#FAF7F2">
+<title>Agathe &amp; Lucas — 22 &amp; 23 mai 2027</title>
+<meta name="description" content="Agathe & Lucas se marient le samedi 22 mai 2027 en Normandie, avec un brunch le dimanche 23 mai. Programme, lieux, hébergement et confirmation de présence.">
+<meta name="theme-color" content="#F8F7F2">
 
 <!-- Aperçu du lien (WhatsApp, SMS, e-mail). Remplacez og:image par l'URL ABSOLUE d'une photo une fois le site en ligne. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Agathe & Lucas — Nous nous marions">
-<meta property="og:description" content="21 & 22 mai 2027 · Normandie. Programme, hébergement et confirmation de présence.">
+<meta property="og:description" content="22 & 23 mai 2027 · Normandie. Programme, hébergement et confirmation de présence.">
 <!-- <meta property="og:image" content="https://VOTRE-SITE.netlify.app/photos/partage.jpg"> -->
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%23682F40'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%23FAF7F2'%3EA%26amp;L%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%2356694C'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%23F8F7F2'%3EA%26amp;L%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,15 +24,19 @@
    1. DESIGN TOKENS — modifiez les couleurs et polices ici
    ===================================================================== */
 :root{
-  --ivory:#FAF7F2;
-  --ivory-deep:#F3EDE4;
-  --rose:#E8C8C5;
-  --champagne:#D6C1A3;
-  --bordeaux:#682F40;
-  --bordeaux-deep:#4E2230;
-  --ink:#292524;
-  --ink-soft:#5A534F;
-  --line:rgba(41,37,36,.14);
+  /* Palette vert sauge */
+  --ivory:#F8F7F2;          /* fond principal */
+  --ivory-deep:#EEF0E6;     /* fond des sections alternées */
+  --sauge-clair:#DDE4D3;    /* aplats doux */
+  --sauge:#A7B496;          /* détails décoratifs */
+  --sauge-fonce:#56694C;    /* accents, boutons, titres en italique */
+  --sauge-nuit:#3B4A35;     /* survol des boutons */
+  --foret:#2F3B2B;          /* sections sombres (lieux, pied de page) */
+  --champagne:#CDBF9E;      /* filets dorés, touche chaleureuse */
+  --ink:#262A24;            /* texte */
+  --ink-soft:#585E53;       /* texte secondaire */
+  --line:rgba(38,42,36,.14);
+  --toile:none;             /* motif toile de Jouy : défini dans CONFIG.photos.toile */
 
   --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
   --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -54,32 +58,32 @@ img{display:block;max-width:100%}
 a{color:inherit}
 h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;margin:0;letter-spacing:-.01em}
 p{margin:0 0 1em}
-:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px}
+:focus-visible{outline:2px solid var(--sauge-fonce);outline-offset:3px}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip{position:absolute;left:1rem;top:-100px;z-index:200;background:var(--ink);color:var(--ivory);padding:.6rem 1rem;text-decoration:none}
 .skip:focus{top:1rem}
 
 /* Typographic helpers */
-.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bordeaux);font-weight:500;display:flex;align-items:center;gap:.9rem;margin:0 0 1.4rem}
+.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sauge-fonce);font-weight:500;display:flex;align-items:center;gap:.9rem;margin:0 0 1.4rem}
 .eyebrow::before{content:"";width:2.2rem;height:1px;background:currentColor;opacity:.5}
 .eyebrow--center{justify-content:center}
 .eyebrow--center::after{content:"";width:2.2rem;height:1px;background:currentColor;opacity:.5}
 .title{font-size:clamp(2.6rem, 6vw, 4.6rem)}
-.title em{font-style:italic;color:var(--bordeaux)}
+.title em{font-style:italic;color:var(--sauge-fonce)}
 .lede{font-family:var(--serif);font-size:clamp(1.25rem, 2.2vw, 1.55rem);line-height:1.45;font-style:italic;color:var(--ink-soft);font-weight:300}
-.script{font-family:var(--script);font-weight:400;color:var(--bordeaux);line-height:1}
+.script{font-family:var(--script);font-weight:400;color:var(--sauge-fonce);line-height:1}
 
 .section{padding:clamp(5rem, 12vw, 9.5rem) var(--gutter)}
 .wrap{max-width:1180px;margin:0 auto}
 .center{text-align:center}
 
 /* Buttons */
-.btn{--bg:var(--bordeaux);--fg:var(--ivory);display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:52px;padding:1rem 2.1rem;background:var(--bg);color:var(--fg);border:1px solid var(--bg);font:500 .76rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease)}
-.btn:hover{--bg:var(--bordeaux-deep)}
+.btn{--bg:var(--sauge-fonce);--fg:var(--ivory);display:inline-flex;align-items:center;justify-content:center;gap:.7rem;min-height:52px;padding:1rem 2.1rem;background:var(--bg);color:var(--fg);border:1px solid var(--bg);font:500 .76rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease)}
+.btn:hover{--bg:var(--sauge-nuit)}
 .btn:active{transform:translateY(1px)}
 .btn--ghost{--bg:transparent;--fg:var(--ink);border-color:var(--ink)}
 .btn--ghost:hover{--bg:var(--ink);--fg:var(--ivory)}
-.btn--light{--bg:var(--ivory);--fg:var(--bordeaux);border-color:var(--ivory)}
+.btn--light{--bg:var(--ivory);--fg:var(--sauge-fonce);border-color:var(--ivory)}
 .btn--light:hover{--bg:transparent;--fg:var(--ivory)}
 .link{position:relative;display:inline-flex;align-items:center;gap:.6rem;font:500 .76rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:.6rem 0;color:var(--ink)}
 .link::after{content:"";position:absolute;left:0;right:0;bottom:.2rem;height:1px;background:currentColor;transform-origin:right;transform:scaleX(.35);transition:transform .5s var(--ease)}
@@ -92,11 +96,30 @@ p{margin:0 0 1em}
 .reveal.is-visible{opacity:1;transform:none}
 
 /* Photo slots: image si fournie, sinon placeholder élégant (aucune image fictive) */
-.photo{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ivory-deep) 0%,var(--rose) 55%,var(--champagne) 100%)}
+.photo{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ivory-deep) 0%,var(--sauge-clair) 55%,var(--champagne) 100%)}
 .photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease-out)}
-.photo__ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:var(--bordeaux);text-align:center;padding:1rem}
+.photo__ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:var(--sauge-fonce);text-align:center;padding:1rem}
 .photo__ph .mono{font-family:var(--script);font-size:clamp(2.4rem,6vw,3.6rem);line-height:1;opacity:.75}
 .photo__ph small{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;opacity:.65}
+
+/* Toile de Jouy — utilisée avec parcimonie (enveloppe, panneau derrière la photo d'accueil, bandeau avant le pied de page) */
+.toile-band{height:clamp(64px,9vw,104px);background:var(--toile) center/400px repeat;border-top:1px solid var(--line);border-bottom:1px solid var(--line);opacity:.9}
+.hero__visual{isolation:isolate}
+.hero__visual::before{content:"";position:absolute;z-index:-1;inset:9% -9% -5% 14%;background:var(--toile) center/340px repeat;opacity:.6;border:1px solid var(--line)}
+.envelope::before{content:"";position:absolute;inset:0;background:var(--toile) center/420px repeat;opacity:.32;pointer-events:none}
+
+/* Chiffres romains I et II : repères décoratifs des deux jours */
+.day-num{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--sauge-fonce);letter-spacing:.02em}
+.hero__days{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem;margin:1.1rem 0 0;font:500 .72rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.hero__days .day-num{font-size:1.35rem;letter-spacing:0;text-transform:none;margin-right:.45rem;vertical-align:-.12em}
+.hero__days .sep{width:1.8rem;height:1px;background:var(--champagne)}
+.hero__deadline{margin:1.2rem 0 0;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--ink-soft)}
+.hero__deadline strong{font-weight:500;color:var(--sauge-fonce)}
+.tab__num{display:block;font-family:var(--serif);font-style:italic;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1;color:var(--sauge);margin-bottom:.4rem}
+.tab[aria-selected="true"] .tab__num{color:var(--sauge-fonce)}
+.panel__num{font-family:var(--serif);font-style:italic;color:var(--sauge);margin-right:.5rem}
+.venues .day-num{color:var(--sauge);font-size:1.15rem;letter-spacing:.04em;text-transform:none}
+.venue__credit{font-size:.68rem;color:rgba(248,247,242,.55);margin:.55rem 0 0}
 
 /* Subtle botanical sprig */
 .sprig{width:64px;height:auto;color:var(--champagne);display:block}
@@ -114,18 +137,18 @@ p{margin:0 0 1em}
 .envelope__body::after{right:0;clip-path:polygon(100% 0,100% 100%,0 100%)}
 .envelope__flap{position:absolute;left:0;right:0;top:0;height:58%;background:#EEE6DA;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 1s var(--ease-out);z-index:2;border-top:1px solid var(--line)}
 .envelope.is-open .envelope__flap{transform:rotateX(180deg)}
-.envelope__seal{position:absolute;left:50%;top:58%;z-index:3;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;border:0;cursor:pointer;background:radial-gradient(circle at 35% 30%,#8a4357,var(--bordeaux) 55%,var(--bordeaux-deep));color:var(--ivory);font-family:var(--script);font-size:1.7rem;box-shadow:0 6px 16px rgba(78,34,48,.35),inset 0 0 0 4px rgba(255,255,255,.08);transition:transform .6s var(--ease),opacity .5s}
+.envelope__seal{position:absolute;left:50%;top:58%;z-index:3;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;border:0;cursor:pointer;background:radial-gradient(circle at 35% 30%,#7F926F,var(--sauge-fonce) 55%,var(--sauge-nuit));color:var(--ivory);font-family:var(--script);font-size:1.7rem;box-shadow:0 6px 16px rgba(47,59,43,.35),inset 0 0 0 4px rgba(255,255,255,.08);transition:transform .6s var(--ease),opacity .5s}
 .envelope__seal:hover{transform:translate(-50%,-50%) scale(1.05)}
 .envelope.is-open .envelope__seal{opacity:0;transform:translate(-50%,-50%) scale(.8)}
-.envelope__hint{position:absolute;left:0;right:0;bottom:-4.2rem;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--ink-soft)}
-.envelope__skip{position:absolute;bottom:max(1.5rem,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:none;border:0;font:500 .7rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;padding:.8rem 1rem;text-decoration:underline;text-underline-offset:4px}
+.envelope__hint{position:absolute;left:50%;bottom:-4.6rem;transform:translateX(-50%);white-space:nowrap;padding:.35rem 1rem;background:var(--ivory);text-align:center;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--ink-soft)}
+.envelope__skip{background:var(--ivory)!important;position:absolute;bottom:max(1.5rem,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:none;border:0;font:500 .7rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;padding:.8rem 1rem;text-decoration:underline;text-underline-offset:4px}
 
 /* =====================================================================
    4. NAVIGATION
    ===================================================================== */
 .nav{position:fixed;inset:0 0 auto;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);transition:background .5s var(--ease),box-shadow .5s var(--ease)}
 .nav.is-scrolled{background:rgba(250,247,242,.86);backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:saturate(1.2) blur(14px);box-shadow:0 1px 0 var(--line)}
-.nav__brand{font-family:var(--script);font-size:1.75rem;color:var(--bordeaux);text-decoration:none;line-height:1}
+.nav__brand{font-family:var(--script);font-size:1.75rem;color:var(--sauge-fonce);text-decoration:none;line-height:1}
 .nav__links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
 .nav__links a{font:500 .7rem var(--sans);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink);opacity:.75;transition:opacity .3s}
 .nav__links a:hover,.nav__links a[aria-current="true"]{opacity:1}
@@ -140,10 +163,10 @@ p{margin:0 0 1em}
 .mobile-menu ol{list-style:none;margin:0 0 2.5rem;padding:0;counter-reset:m}
 .mobile-menu li{counter-increment:m;border-bottom:1px solid var(--line)}
 .mobile-menu a{display:flex;align-items:baseline;gap:1rem;padding:1rem 0;font-family:var(--serif);font-size:2rem;font-weight:300;text-decoration:none}
-.mobile-menu a::before{content:counter(m,upper-roman);font:500 .7rem var(--sans);letter-spacing:.15em;color:var(--bordeaux);width:2rem}
+.mobile-menu a::before{content:counter(m,decimal-leading-zero);font:500 .7rem var(--sans);letter-spacing:.15em;color:var(--sauge-fonce);width:2rem}
 
 /* Floating RSVP on mobile */
-.float-rsvp{position:fixed;left:1rem;right:1rem;bottom:max(1rem,env(safe-area-inset-bottom));z-index:80;display:none;transform:translateY(150%);transition:transform .6s var(--ease-out);box-shadow:0 18px 40px -16px rgba(78,34,48,.55)}
+.float-rsvp{position:fixed;left:1rem;right:1rem;bottom:max(1rem,env(safe-area-inset-bottom));z-index:80;display:none;transform:translateY(150%);transition:transform .6s var(--ease-out);box-shadow:0 18px 40px -16px rgba(47,59,43,.45)}
 .float-rsvp.is-shown{transform:none}
 
 /* =====================================================================
@@ -156,8 +179,8 @@ p{margin:0 0 1em}
 .names .line{display:block;overflow:hidden;padding-bottom:.06em}
 .names .char{display:inline-block;transform:translateY(105%);opacity:0;filter:blur(6px);transition:transform 1.4s var(--ease-out),opacity 1.4s var(--ease-out),filter 1.4s var(--ease-out);transition-delay:calc(var(--i) * 55ms + var(--base,0ms))}
 .is-ready .names .char{transform:none;opacity:1;filter:none}
-.names .amp{font-family:var(--script);color:var(--bordeaux);font-size:.62em;display:inline-block;margin:0 .1em 0 .04em;vertical-align:.08em}
-.hero__sub{font-family:var(--script);font-size:clamp(2rem,4vw,2.9rem);color:var(--bordeaux);margin:1.4rem 0 1.6rem}
+.names .amp{font-family:var(--script);color:var(--sauge-fonce);font-size:.62em;display:inline-block;margin:0 .1em 0 .04em;vertical-align:.08em}
+.hero__sub{font-family:var(--script);font-size:clamp(2rem,4vw,2.9rem);color:var(--sauge-fonce);margin:1.4rem 0 1.6rem}
 .hero__date{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2rem);font-weight:400;letter-spacing:.04em;margin:0}
 .hero__place{font:500 .74rem var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);margin-top:.4rem}
 .hero .fade-in{opacity:0;transform:translateY(16px);transition:opacity 1.2s var(--ease-out),transform 1.2s var(--ease-out);transition-delay:var(--d)}
@@ -168,7 +191,7 @@ p{margin:0 0 1em}
 .countdown__cell + .countdown__cell{border-left:1px solid var(--line)}
 .countdown__num{display:block;font-family:var(--serif);font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:300;line-height:1;font-variant-numeric:lining-nums tabular-nums}
 .countdown__lbl{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:.45rem}
-.countdown--done{display:block;padding:1rem 0;font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--bordeaux)}
+.countdown--done{display:block;padding:1rem 0;font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--sauge-fonce)}
 
 .hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem 2rem}
 
@@ -180,7 +203,7 @@ p{margin:0 0 1em}
 .is-ready .hero__visual .photo{clip-path:inset(0)}
 .hero__caption{position:absolute;right:-.6rem;bottom:2.2rem;writing-mode:vertical-rl;transform:rotate(180deg);font:500 .62rem var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
 .hero__scroll{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);width:1px;height:46px;background:var(--line);overflow:hidden}
-.hero__scroll::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--bordeaux);animation:scrollcue 2.4s var(--ease) infinite}
+.hero__scroll::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--sauge-fonce);animation:scrollcue 2.4s var(--ease) infinite}
 @keyframes scrollcue{to{top:100%}}
 
 /* =====================================================================
@@ -192,23 +215,23 @@ p{margin:0 0 1em}
 .story__photos .photo--main{aspect-ratio:4/5}
 .story__photos .photo--small{position:absolute;width:44%;aspect-ratio:1;right:-9%;bottom:-10%;border:10px solid var(--ivory-deep)}
 .story__eight{display:flex;align-items:flex-end;gap:1.2rem;margin:0 0 2rem}
-.story__eight .big{font-family:var(--serif);font-weight:300;font-size:clamp(6rem,14vw,10rem);line-height:.75;color:var(--bordeaux)}
+.story__eight .big{font-family:var(--serif);font-weight:300;font-size:clamp(6rem,14vw,10rem);line-height:.75;color:var(--sauge-fonce)}
 .story__eight .lbl{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.2;padding-bottom:.4rem}
 .story__text p{color:var(--ink-soft);max-width:34em}
-.story__text p:first-of-type::first-letter{font-family:var(--serif);float:left;font-size:4.2em;line-height:.8;padding:.08em .12em 0 0;color:var(--bordeaux)}
-.story__sign{font-family:var(--script);font-size:2.4rem;color:var(--bordeaux);margin-top:1.6rem}
+.story__text p:first-of-type::first-letter{font-family:var(--serif);float:left;font-size:4.2em;line-height:.8;padding:.08em .12em 0 0;color:var(--sauge-fonce)}
+.story__sign{font-family:var(--script);font-size:2.4rem;color:var(--sauge-fonce);margin-top:1.6rem}
 
 /* =====================================================================
    7. PROGRAMME
    ===================================================================== */
 .program__head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2.5rem,5vw,4rem)}
-.tabs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tabs{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .tab{background:none;border:0;cursor:pointer;padding:1.4rem 1rem 1.3rem;text-align:left;color:var(--ink-soft);position:relative;font-family:inherit;transition:color .4s var(--ease)}
 .tab + .tab{border-left:1px solid var(--line)}
-.tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--bordeaux);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease-out)}
+.tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--sauge-fonce);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease-out)}
 .tab[aria-selected="true"]{color:var(--ink)}
 .tab[aria-selected="true"]::after{transform:scaleX(1)}
-.tab__day{display:block;font:500 .66rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--bordeaux)}
+.tab__day{display:block;font:500 .66rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--sauge-fonce)}
 .tab__date{display:block;font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.3rem);font-weight:300;line-height:1.1;margin-top:.35rem}
 .tab__name{display:block;font-size:.85rem;margin-top:.15rem}
 .panel{padding-top:clamp(2rem,4vw,3rem)}
@@ -217,7 +240,7 @@ p{margin:0 0 1em}
 @keyframes tlIn{from{opacity:0;transform:translateY(14px)}}
 .panel__intro{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:baseline;margin-bottom:2rem}
 .panel__title{font-size:clamp(2rem,4vw,3rem)}
-.panel__title em{color:var(--bordeaux)}
+.panel__title em{color:var(--sauge-fonce)}
 .timeline{list-style:none;margin:0;padding:0;position:relative}
 .tl-item{display:grid;grid-template-columns:150px 1fr;gap:2rem;padding:1.6rem 0;border-top:1px solid var(--line);position:relative}
 .tl-item:last-child{border-bottom:1px solid var(--line)}
@@ -227,17 +250,17 @@ p{margin:0 0 1em}
 .tl-body p{margin:0;color:var(--ink-soft);font-size:.95rem}
 .tl-body .addr{font-style:normal;display:block;margin-top:.2rem}
 .tl-body .tl-links{margin-top:.6rem;display:flex;gap:1.5rem;flex-wrap:wrap}
-.tag{display:inline-block;vertical-align:middle;margin-left:.6rem;padding:.25rem .6rem;border:1px solid var(--champagne);font:500 .6rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--bordeaux);background:rgba(214,193,163,.15)}
+.tag{display:inline-block;vertical-align:middle;margin-left:.6rem;padding:.25rem .6rem;border:1px solid var(--champagne);font:500 .6rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--sauge-fonce);background:rgba(214,193,163,.15)}
 
 /* =====================================================================
    8. LIEUX
    ===================================================================== */
-.venues{background:var(--ink);color:var(--ivory)}
+.venues{background:var(--foret);color:var(--ivory)}
 .venues .eyebrow{color:var(--champagne)}
-.venues .title em{color:var(--rose)}
-.venues__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,2.5rem);margin-top:clamp(2.5rem,5vw,4rem)}
+.venues .title em{color:var(--sauge)}
+.venues__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.5rem,3vw,2.5rem);margin-top:clamp(2.5rem,5vw,4rem)}
 .venue{display:flex;flex-direction:column}
-.venue .photo{aspect-ratio:4/5;background:linear-gradient(160deg,#3a3431,#4a3a3c 60%,#5b4a3f)}
+.venue .photo{aspect-ratio:4/3;background:linear-gradient(160deg,#3a4636,#4a5843 60%,#5d6a4f)}
 .venue .photo__ph{color:var(--champagne)}
 .venue .photo.is-empty{aspect-ratio:4/3;background:transparent;border:1px solid rgba(214,193,163,.35)}
 .venue__big{font-family:var(--serif);font-weight:300;font-size:clamp(4rem,8vw,6rem);line-height:1;color:var(--champagne)}
@@ -255,12 +278,12 @@ p{margin:0 0 1em}
    9. HEBERGEMENT
    ===================================================================== */
 .stay__grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(2.5rem,7vw,7rem);align-items:start}
-.stay__count{font-family:var(--serif);font-weight:300;font-size:clamp(7rem,18vw,13rem);line-height:.8;color:var(--bordeaux)}
+.stay__count{font-family:var(--serif);font-weight:300;font-size:clamp(7rem,18vw,13rem);line-height:.8;color:var(--sauge-fonce)}
 .stay__count-lbl{font-family:var(--serif);font-style:italic;font-size:1.5rem;margin-top:.8rem}
 .stay__spaces{display:flex;flex-wrap:wrap;gap:.6rem;margin:2rem 0 0;padding:0;list-style:none}
 .stay__spaces li{padding:.55rem 1.1rem;border:1px solid var(--line);font-family:var(--serif);font-size:1.15rem;font-style:italic}
 .stay__lists{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2.2rem 0}
-.stay__lists h3{font:500 .7rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--bordeaux);margin-bottom:.9rem}
+.stay__lists h3{font:500 .7rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--sauge-fonce);margin-bottom:.9rem}
 .stay__lists ul{list-style:none;margin:0;padding:0}
 .stay__lists li{padding:.55rem 0;border-top:1px solid var(--line);font-size:.97rem}
 .stay__lists li:last-child{border-bottom:1px solid var(--line)}
@@ -270,21 +293,23 @@ p{margin:0 0 1em}
 .space-card img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease-out)}
 .space-card:hover img{transform:scale(1.03)}
 .space-card span{display:flex;justify-content:space-between;align-items:baseline;margin-top:.8rem;font-family:var(--serif);font-size:1.35rem;font-style:italic}
-.space-card span small{font:500 .64rem var(--sans);letter-spacing:.2em;text-transform:uppercase;font-style:normal;color:var(--bordeaux)}
+.space-card span small{font:500 .64rem var(--sans);letter-spacing:.2em;text-transform:uppercase;font-style:normal;color:var(--sauge-fonce)}
 .note{padding:1.2rem 1.4rem;background:var(--ivory-deep);border-left:2px solid var(--champagne);font-size:.92rem;color:var(--ink-soft);margin:0 0 2rem}
 .note strong{color:var(--ink);font-weight:500}
 
 /* =====================================================================
    10. RSVP
    ===================================================================== */
-.rsvp{background:var(--bordeaux);color:var(--ivory);position:relative;overflow:hidden}
+.rsvp{background:var(--sauge-fonce);color:var(--ivory);position:relative;overflow:hidden}
 .rsvp::before{content:"";position:absolute;inset:clamp(.8rem,2vw,1.5rem);border:1px solid rgba(214,193,163,.35);pointer-events:none}
 .rsvp .eyebrow{color:var(--champagne)}
 .rsvp .title{color:var(--ivory)}
-.rsvp .lede{color:rgba(250,247,242,.8)}
+.rsvp .lede{color:rgba(248,247,242,.82)}
+.rsvp__deadline{display:inline-block;margin:1.4rem 0 0;padding:.6rem 1.3rem;border:1px solid rgba(205,191,158,.6);font:500 .74rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ivory)}
+.rsvp__deadline strong{color:var(--champagne);font-weight:500}
 .rsvp__steps{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem 2.2rem;margin:2.2rem 0 3rem;padding:0;list-style:none;font:500 .68rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--champagne)}
 .rsvp__steps li{display:flex;align-items:center;gap:.6rem}
-.rsvp__steps li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--rose)}
+.rsvp__steps li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--sauge-clair)}
 .rsvp__card{max-width:820px;margin:0 auto;background:var(--ivory);color:var(--ink);padding:clamp(.6rem,2vw,1.2rem);box-shadow:0 40px 80px -40px rgba(0,0,0,.5)}
 .rsvp__card iframe{display:block;width:100%;border:0;background:var(--ivory);height:var(--form-h,1500px)}
 .rsvp__alt{text-align:center;margin-top:1.6rem;font-size:.9rem;color:rgba(250,247,242,.8)}
@@ -295,7 +320,7 @@ p{margin:0 0 1em}
 .demo > p{color:var(--ink-soft)}
 .demo__parts{list-style:none;margin:1.8rem 0;padding:0;counter-reset:p}
 .demo__parts li{counter-increment:p;display:grid;grid-template-columns:2.2rem 1fr;gap:.8rem;padding:.9rem 0;border-top:1px solid var(--line)}
-.demo__parts li::before{content:counter(p,upper-alpha);font-family:var(--serif);font-size:1.4rem;color:var(--bordeaux);line-height:1.1}
+.demo__parts li::before{content:counter(p,upper-alpha);font-family:var(--serif);font-size:1.4rem;color:var(--sauge-fonce);line-height:1.1}
 .demo__parts strong{display:block;font-weight:500}
 .demo__parts span{font-size:.9rem;color:var(--ink-soft)}
 .demo__actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.4rem}
@@ -303,10 +328,10 @@ p{margin:0 0 1em}
 /* =====================================================================
    11. PLAYLIST
    ===================================================================== */
-.playlist{background:var(--rose);position:relative;overflow:hidden}
+.playlist{background:var(--sauge-clair);position:relative;overflow:hidden}
 .playlist__inner{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(2rem,5vw,4.5rem);align-items:center}
 .disc{width:clamp(120px,16vw,180px);aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,var(--ink) 0 2px,#3a3431 2px 4px);position:relative;box-shadow:0 20px 40px -20px rgba(41,37,36,.6)}
-.disc::after{content:"A&L";position:absolute;inset:34%;border-radius:50%;background:var(--bordeaux);color:var(--ivory);display:grid;place-items:center;font-family:var(--script);font-size:clamp(.9rem,1.6vw,1.2rem)}
+.disc::after{content:"A&L";position:absolute;inset:34%;border-radius:50%;background:var(--sauge-fonce);color:var(--ivory);display:grid;place-items:center;font-family:var(--script);font-size:clamp(.9rem,1.6vw,1.2rem)}
 .playlist.is-visible .disc{animation:spin 9s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .playlist .quote{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.3;margin:0}
@@ -325,19 +350,19 @@ p{margin:0 0 1em}
 .acc .acc__body p:last-child{margin:0}
 .acc .acc__body ul{margin:.2rem 0 1rem;padding-left:1.1rem}
 .acc .acc__body li{margin-bottom:.4rem}
-.acc .acc__body a{color:var(--bordeaux)}
+.acc .acc__body a{color:var(--sauge-fonce)}
 .contacts{display:grid;gap:1rem;margin-top:2rem}
 .contact{padding:1.3rem 1.4rem;border:1px solid var(--line);display:flex;flex-direction:column;gap:.2rem;text-decoration:none;transition:border-color .4s,background .4s}
-.contact:hover{border-color:var(--bordeaux);background:#fff}
+.contact:hover{border-color:var(--sauge-fonce);background:#fff}
 .contact strong{font-family:var(--serif);font-size:1.5rem;font-weight:400}
 .contact span{font-size:.88rem;color:var(--ink-soft);word-break:break-all}
 
 /* =====================================================================
    13. FOOTER
    ===================================================================== */
-.footer{background:var(--ink);color:var(--ivory);text-align:center;padding:clamp(5rem,11vw,8rem) var(--gutter) calc(3rem + env(safe-area-inset-bottom))}
+.footer{background:var(--foret);color:var(--ivory);text-align:center;padding:clamp(5rem,11vw,8rem) var(--gutter) calc(3rem + env(safe-area-inset-bottom))}
 .footer .names-sm{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,8vw,5.5rem);line-height:1}
-.footer .names-sm .amp{font-family:var(--script);color:var(--rose);font-size:.7em}
+.footer .names-sm .amp{font-family:var(--script);color:var(--sauge);font-size:.7em}
 .footer .see-you{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--champagne);margin:1rem 0 2.5rem}
 .footer__contacts{display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem 2rem;font-size:.9rem}
 .footer__contacts a{color:var(--ivory);text-decoration-color:rgba(250,247,242,.35);text-underline-offset:4px}
@@ -356,6 +381,8 @@ p{margin:0 0 1em}
   :root{--nav-h:64px}
   .hero{grid-template-columns:1fr;text-align:center;gap:2.4rem;padding-top:calc(var(--nav-h) + 1.4rem)}
   .hero__visual{order:-1;max-width:min(60vw,290px)}
+  .hero__visual::before{inset:7% -7% -4% 10%;background-size:240px}
+  .hero__days{justify-content:center}
   .hero__caption{display:none}
   .hero__kicker{margin-bottom:1.2rem}
   .countdown{margin:2rem auto 2.2rem}
@@ -420,7 +447,7 @@ p{margin:0 0 1em}
 </div>
 
 <main>
-<!-- ============ I. ACCUEIL ============ -->
+<!-- ============ ACCUEIL ============ -->
 <header class="hero" id="accueil">
   <div class="hero__text">
     <p class="hero__kicker fade-in" style="--d:.1s" data-text="kicker"></p>
@@ -428,6 +455,7 @@ p{margin:0 0 1em}
     <p class="hero__sub fade-in" style="--d:1.1s" data-text="tagline"></p>
     <p class="hero__date fade-in" style="--d:1.25s" data-text="dateLabel"></p>
     <p class="hero__place fade-in" style="--d:1.35s" data-text="place"></p>
+    <p class="hero__days fade-in" style="--d:1.42s" id="heroDays"></p>
     <div class="fade-in" style="--d:1.5s">
       <div class="countdown" id="countdown" role="timer" aria-live="off"></div>
     </div>
@@ -435,6 +463,7 @@ p{margin:0 0 1em}
       <a href="#rsvp" class="btn">Confirmer ma présence</a>
       <a href="#programme" class="link">Découvrir notre week-end <span class="arrow" aria-hidden="true">→</span></a>
     </div>
+    <p class="hero__deadline fade-in" style="--d:1.75s" id="heroDeadline"></p>
   </div>
   <div class="hero__visual">
     <div class="arch-frame"><div class="photo arch" data-photo="hero" data-alt="Agathe et Lucas"></div></div>
@@ -442,7 +471,7 @@ p{margin:0 0 1em}
   </div>
 </header>
 
-<!-- ============ II. NOTRE HISTOIRE ============ -->
+<!-- ============ NOTRE HISTOIRE ============ -->
 <section class="section story" id="histoire" aria-labelledby="t-histoire">
   <div class="wrap story__grid">
     <div class="story__photos reveal">
@@ -450,7 +479,7 @@ p{margin:0 0 1em}
       <div class="photo photo--small" data-photo="story2" data-optional data-alt="Agathe et Lucas"></div>
     </div>
     <div class="story__text">
-      <p class="eyebrow reveal">II — Notre histoire</p>
+      <p class="eyebrow reveal">Notre histoire</p>
       <div class="story__eight reveal" style="--d:.1s"><span class="big" aria-hidden="true">8</span><span class="lbl">années d'amour,<br>et l'envie de vous les raconter</span></div>
       <h2 class="title reveal sr-only" id="t-histoire">Notre histoire</h2>
       <div id="storyText" class="reveal" style="--d:.2s"></div>
@@ -459,35 +488,35 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<!-- ============ III. PROGRAMME ============ -->
+<!-- ============ PROGRAMME ============ -->
 <section class="section" id="programme" aria-labelledby="t-programme">
   <div class="wrap">
     <div class="program__head">
       <div>
-        <p class="eyebrow reveal">III — Le programme</p>
-        <h2 class="title reveal" id="t-programme">Trois jours <em>ensemble</em></h2>
+        <p class="eyebrow reveal">Le programme</p>
+        <h2 class="title reveal" id="t-programme">Deux jours <em>ensemble</em></h2>
       </div>
-      <p class="lede reveal" style="max-width:24em;margin:0">Du oui officiel au dernier café du dimanche, voici le déroulé de notre week-end.</p>
+      <p class="lede reveal" style="max-width:24em;margin:0">Du « oui » à l'église au dernier café du dimanche, voici le déroulé de notre week-end.</p>
     </div>
     <div class="tabs reveal" role="tablist" aria-label="Jours du mariage" id="tabs"></div>
     <div id="panels"></div>
   </div>
 </section>
 
-<!-- ============ IV. LES LIEUX ============ -->
+<!-- ============ LES LIEUX ============ -->
 <section class="section venues" id="lieux" aria-labelledby="t-lieux">
   <div class="wrap">
-    <p class="eyebrow reveal">IV — Les lieux</p>
-    <h2 class="title reveal" id="t-lieux">De Colombelles <em>au Domaine</em></h2>
+    <p class="eyebrow reveal">Les lieux</p>
+    <h2 class="title reveal" id="t-lieux">De Ouistreham <em>au Domaine</em></h2>
     <div class="venues__grid" id="venues"></div>
   </div>
 </section>
 
-<!-- ============ V. HÉBERGEMENT ============ -->
+<!-- ============ HÉBERGEMENT ============ -->
 <section class="section" id="hebergement" aria-labelledby="t-hebergement">
   <div class="wrap stay__grid">
     <div class="reveal">
-      <p class="eyebrow">V — Hébergement</p>
+      <p class="eyebrow">Hébergement</p>
       <div class="stay__count" data-text="beds"></div>
       <p class="stay__count-lbl">couchages au domaine,<br>offerts par les mariés</p>
       <ul class="stay__spaces" id="spaces"></ul>
@@ -499,33 +528,34 @@ p{margin:0 0 1em}
         <div><h3>Fourni</h3><ul><li>Matelas</li><li>Couettes</li><li>Oreillers</li></ul></div>
         <div><h3>À apporter</h3><ul><li>Draps</li><li>Serviettes</li></ul></div>
       </div>
-      <p class="note"><strong>Les couchages sont gratuits et leur répartition est organisée par les mariés.</strong> Le nombre de places étant limité, une demande ne vaut pas attribution définitive : nous reviendrons vers vous pour confirmer.</p>
+      <p class="note"><strong>Les couchages sont gratuits et leur répartition est organisée par les mariés.</strong> Indiquez simplement dans le formulaire combien de personnes de votre famille dormiront sur place. Le nombre de places étant limité, une demande ne vaut pas attribution définitive : nous reviendrons vers vous pour confirmer.</p>
       <a href="#rsvp" class="btn">Demander un couchage</a>
     </div>
   </div>
   <div class="wrap spaces-gallery" id="spacesGallery"></div>
 </section>
 
-<!-- ============ VI. RSVP ============ -->
+<!-- ============ RSVP ============ -->
 <section class="section rsvp" id="rsvp" aria-labelledby="t-rsvp">
   <div class="wrap center">
-    <p class="eyebrow eyebrow--center reveal">VI — Confirmation de présence</p>
+    <p class="eyebrow eyebrow--center reveal">Confirmation de présence</p>
     <h2 class="title reveal" id="t-rsvp">Serez-vous des nôtres ?</h2>
     <p class="lede reveal" style="--d:.1s;margin-top:1rem">Quelques instants pour nous aider à organiser ce week-end inoubliable.</p>
+    <p class="rsvp__deadline reveal" style="--d:.15s" id="rsvpDeadline"></p>
     <ul class="rsvp__steps reveal" style="--d:.2s">
-      <li>Une réponse par personne</li><li>Environ 3 minutes</li><li>Réponse modifiable</li>
+      <li>Une réponse par couple ou par famille</li><li>Environ 3 minutes</li><li>Réponse modifiable</li>
     </ul>
   </div>
   <div class="rsvp__card reveal" style="--d:.25s" id="rsvpCard"></div>
   <p class="rsvp__alt" id="rsvpAlt"></p>
 </section>
 
-<!-- ============ VII. PLAYLIST ============ -->
+<!-- ============ PLAYLIST ============ -->
 <section class="section playlist" id="playlist" aria-labelledby="t-playlist">
   <div class="wrap playlist__inner">
     <div class="disc" aria-hidden="true"></div>
     <div>
-      <p class="eyebrow">VII — Notre playlist</p>
+      <p class="eyebrow">Notre playlist</p>
       <h2 class="sr-only" id="t-playlist">Notre playlist</h2>
       <p class="quote">Une chanson, un souvenir, une envie de danser… Aidez-nous à composer la bande-son de notre soirée.</p>
     </div>
@@ -533,11 +563,11 @@ p{margin:0 0 1em}
   </div>
 </section>
 
-<!-- ============ VIII. INFOS PRATIQUES ============ -->
+<!-- ============ INFOS PRATIQUES ============ -->
 <section class="section" id="infos" aria-labelledby="t-infos">
   <div class="wrap info__grid">
     <div class="reveal">
-      <p class="eyebrow">VIII — Informations pratiques</p>
+      <p class="eyebrow">Informations pratiques</p>
       <h2 class="title" id="t-infos">Tout ce qu'il <em>faut savoir</em></h2>
       <p class="lede" style="margin-top:1.2rem">Une question qui ne trouve pas sa réponse ici ? Écrivez-nous, tout simplement.</p>
       <div class="contacts" id="contacts"></div>
@@ -547,7 +577,9 @@ p{margin:0 0 1em}
 </section>
 </main>
 
-<!-- ============ IX. PIED DE PAGE ============ -->
+<div class="toile-band" aria-hidden="true"></div>
+
+<!-- ============ PIED DE PAGE ============ -->
 <footer class="footer">
   <svg class="sprig" viewBox="0 0 80 40" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M4 30 C 24 26, 46 22, 76 8"/><path d="M18 27c-2-6 2-11 7-12-1 6-3 10-7 12z"/><path d="M32 23c-1-7 3-11 8-12-1 6-4 10-8 12z"/><path d="M46 19c0-6 4-10 9-10-2 6-5 9-9 10z"/><path d="M24 26c5-3 11-2 13 2-6 1-10 0-13-2z"/><path d="M40 21c5-3 11-2 13 2-6 1-10 0-13-2z"/><path d="M56 15c4-3 10-2 12 1-5 2-9 1-12-1z"/></svg>
   <p class="names-sm"><span data-text="nameA"></span> <span class="amp">&amp;</span> <span data-text="nameB"></span></p>
@@ -580,10 +612,11 @@ const CONFIG = {
   nameB: "Lucas",
   kicker: "Save the date",
   tagline: "Nous nous marions",
-  dateLabel: "21 & 22 mai 2027",
+  dateLabel: "22 & 23 mai 2027",
   place: "Normandie, France",
   countdownTarget: "2027-05-22T14:30:00+02:00",  // cérémonie religieuse, heure de Paris
   signature: "Agathe & Lucas",
+  rsvpDeadline: "10 janvier 2027",               // date limite de réponse (affichée sur le site)
 
   story: [
     "Huit ans. Huit années de rires, de projets et de souvenirs partagés, de petits riens du quotidien qui, mis bout à bout, ont fini par écrire notre plus belle histoire.",
@@ -595,17 +628,18 @@ const CONFIG = {
      Chemin relatif (ex. "photos/hero.jpg") ou URL complète.
      Laissez "" pour afficher un emplacement élégant sans image.
      Formats conseillés : hero 1200×1600 (portrait), story 1200×1500,
-     story2 800×800, lieux 1200×1500. JPG ou WebP, < 400 Ko. */
+     story2 800×800, lieux 1400×1050 (paysage). JPG ou WebP, < 400 Ko. */
   photos: {
     hero:    "https://static.wixstatic.com/media/a3c367_32081b857fe54604814f08ab2c3a5609~mv2.jpeg/v1/fit/w_1600,h_1600,q_85,enc_auto/agathe-lucas-plage.jpg",
     story:   "https://static.wixstatic.com/media/a3c367_505e57987d3b48ab94fbd4174b5a49df~mv2.jpg/v1/fit/w_1600,h_1600,q_85,enc_auto/agathe-lucas-coucher-de-soleil.jpg",
     story2:  "",
-    mairie:  "",
-    eglise:  "",
-    domaine: ""
+    eglise:  "photos/eglise.jpg",
+    domaine: "photos/domaine.jpg",
+    // Motif toile de Jouy vert (repris du site d'origine), utilisé en petites touches
+    toile:   "https://static.wixstatic.com/media/a3c367_09e201344abf4156b0d9cb0b8eba5a52~mv2.webp/v1/fit/w_700,h_700,q_80/toile-de-jouy.webp"
   },
   // Cadrage des photos dans leur emplacement (position horizontale verticale)
-  photoPosition: { hero: "36% 50%", story: "50% 45%" },
+  photoPosition: { hero: "36% 50%", story: "50% 45%", eglise: "50% 55%", domaine: "60% 60%" },
 
   /* --- Planches des couchages (cliquables pour les voir en grand) --- */
   spaceGallery: [
@@ -614,44 +648,35 @@ const CONFIG = {
     { name: "L'Étage",   src: "https://static.wixstatic.com/media/a3c367_1f71195f67b648a1a090bd2983c01e2d~mv2.png/v1/fit/w_1000,h_1000,q_85,enc_auto/letage.png",   full: "https://static.wixstatic.com/media/a3c367_1f71195f67b648a1a090bd2983c01e2d~mv2.png" }
   ],
 
-  /* --- Programme (ne contient que des horaires confirmés) --------- */
+  /* --- Programme (ne contient que des horaires confirmés) ---------
+     num : chiffre romain décoratif du jour (I = samedi, II = dimanche) */
   days: [
     {
-      id: "vendredi", day: "Vendredi", date: "21 mai", name: "Cérémonie civile",
-      title: "La cérémonie <em>civile</em>", full: "Vendredi 21 mai 2027",
-      items: [
-        { time: "16h30 – 17h", title: "Cérémonie civile", text: "Mairie de Colombelles", address: "Place François-Mitterrand, 14460 Colombelles", map: "Mairie de Colombelles, Place François-Mitterrand, 14460 Colombelles" },
-        { time: "Ensuite", soft: true, title: "Verre partagé", text: "Un moment simple pour trinquer ensemble après la cérémonie." },
-        { time: "En soirée", soft: true, title: "Restaurant éventuel", text: "Les détails vous seront communiqués.", tag: "À confirmer" }
-      ]
-    },
-    {
-      id: "samedi", day: "Samedi", date: "22 mai", name: "Le grand jour",
+      id: "samedi", num: "I", day: "Samedi", date: "22 mai", name: "Le grand jour",
       title: "Le <em>grand</em> jour", full: "Samedi 22 mai 2027",
       items: [
         { time: "14h30", title: "Cérémonie religieuse", text: "Église Saint-Samson", address: "2 place Albert-Lemarignier, 14150 Ouistreham", map: "Église Saint-Samson, 2 place Albert-Lemarignier, 14150 Ouistreham" },
-        { time: "Ensuite", soft: true, title: "Départ vers le domaine", text: "Direction le Domaine du Bû-sur-Rouvres, à Soignolles.", map: "Domaine du Bû-sur-Rouvres, Soignolles" },
+        { time: "Ensuite", soft: true, title: "Départ vers le domaine", text: "Direction le Domaine du Bû-sur-Rouvres.", map: "Domaine du Bû-sur-Rouvres, 13 route de Soignolles, 14190 Le Bû-sur-Rouvres" },
         { time: "À l'arrivée", soft: true, title: "Rafraîchissements", text: "De quoi se désaltérer en arrivant au domaine." },
-        { time: "18h – 18h30", title: "Apéritif dînatoire", text: "Au domaine, en musique." },
-        { time: "20h – 20h30", title: "Entrée dans la salle de réception", text: "" },
+        { time: "18h – 18h30", title: "Cocktail apéritif", text: "Au domaine." },
+        { time: "20h – 20h30", title: "Entrée en salle et installation à table", text: "" },
         { time: "23h30", title: "Pièce montée", text: "" },
-        { time: "Puis", soft: true, title: "Soirée dansante", text: "Jusqu'au bout de la nuit." }
+        { time: "Puis", soft: true, title: "Soirée dansante", text: "" }
       ]
     },
     {
-      id: "dimanche", day: "Dimanche", date: "23 mai", name: "Brunch",
+      id: "dimanche", num: "II", day: "Dimanche", date: "23 mai", name: "Le brunch",
       title: "Le <em>brunch</em>", full: "Dimanche 23 mai 2027",
       items: [
-        { time: "10h30", title: "Brunch au domaine", text: "Que vous ayez dormi sur place ou non, vous êtes les bienvenus.", map: "Domaine du Bû-sur-Rouvres, Soignolles" }
+        { time: "10h30", title: "Brunch au domaine", text: "Que vous ayez dormi sur place ou non, vous êtes les bienvenus.", map: "Domaine du Bû-sur-Rouvres, 13 route de Soignolles, 14190 Le Bû-sur-Rouvres" }
       ]
     }
   ],
 
   /* --- Lieux ------------------------------------------------------ */
   venues: [
-    { photo: "mairie",  town: "Colombelles", label: "Vendredi 21 mai", name: "Mairie de Colombelles", text: "Le lieu de notre cérémonie civile.", address: "Place François-Mitterrand<br>14460 Colombelles", map: "Mairie de Colombelles, Place François-Mitterrand, 14460 Colombelles" },
-    { photo: "eglise",  town: "Ouistreham", label: "Samedi 22 mai · 14h30", name: "Église Saint-Samson", text: "Le lieu de notre cérémonie religieuse, à Ouistreham.", address: "2 place Albert-Lemarignier<br>14150 Ouistreham", map: "Église Saint-Samson, 2 place Albert-Lemarignier, 14150 Ouistreham" },
-    { photo: "domaine", town: "Soignolles", label: "Samedi soir & dimanche", name: "Domaine du Bû-sur-Rouvres", text: "La réception, la soirée, les couchages et le brunch.", address: "Soignolles", map: "Domaine du Bû-sur-Rouvres, Soignolles" }
+    { photo: "eglise",  num: "I",      town: "Ouistreham",        label: "Samedi 22 mai · 14h30",  name: "Église Saint-Samson", text: "Le lieu de notre cérémonie religieuse, à Ouistreham.", address: "2 place Albert-Lemarignier<br>14150 Ouistreham", map: "Église Saint-Samson, 2 place Albert-Lemarignier, 14150 Ouistreham" },
+    { photo: "domaine", num: "I · II", town: "Le Bû-sur-Rouvres", label: "Samedi soir & dimanche", name: "Domaine du Bû-sur-Rouvres", text: "La réception, la soirée, les couchages et le brunch.", address: "13 route de Soignolles<br>14190 Le Bû-sur-Rouvres", map: "Domaine du Bû-sur-Rouvres, 13 route de Soignolles, 14190 Le Bû-sur-Rouvres" }
   ],
 
   /* --- Hébergement ------------------------------------------------ */
@@ -666,16 +691,17 @@ const CONFIG = {
 
   /* --- Questions fréquentes (HTML autorisé) ----------------------- */
   faq: [
-    { q: "Accès & stationnement", a: "<p>Les trois lieux sont distincts : la mairie de Colombelles (vendredi), l'église Saint-Samson à Ouistreham (samedi après-midi) puis le Domaine du Bû-sur-Rouvres à Soignolles (samedi soir et dimanche). Chaque adresse dispose d'un lien d'itinéraire dans la section « Les lieux ».</p><p>Les informations de stationnement vous seront précisées prochainement.</p>" },
+    { q: "Accès aux lieux", a: "<p>Deux lieux à retenir : l'église Saint-Samson de Ouistreham pour la cérémonie du samedi à 14h30, puis le Domaine du Bû-sur-Rouvres pour la réception du samedi soir et le brunch du dimanche. Les itinéraires Google Maps et Waze se trouvent dans la section « Les lieux ».</p>" },
     { q: "Recommandations de transport", a: "<p>Prévoyez un moyen de vous rendre de l'église au domaine en fin d'après-midi. Le covoiturage entre invités est une bonne idée : n'hésitez pas à vous organiser entre vous.</p><p>Si vous comptez reprendre la route après la soirée, pensez à désigner un conducteur, ou demandez un couchage au domaine.</p>" },
-    { q: "Hébergement", a: "<p>55 couchages collectifs gratuits sont disponibles au domaine, répartis entre L'Atelier, L'Escale et L'Étage. Matelas, couettes et oreillers sont fournis ; pensez à apporter <strong>draps et serviettes</strong>.</p><p>Faites votre demande dans le formulaire de réponse : la répartition est organisée par les mariés et vous sera confirmée.</p>" },
-    { q: "Dois-je remplir une réponse par personne ?", a: "<p>Oui, idéalement. Une réponse par invité nous permet de connaître précisément les présences, les couchages et les besoins alimentaires de chacun. Une fois votre réponse envoyée, cliquez sur « Envoyer une autre réponse » pour répondre pour la personne qui vous accompagne.</p>" },
+    { q: "Hébergement", a: "<p>55 couchages collectifs gratuits sont disponibles au domaine, répartis entre L'Atelier, L'Escale et L'Étage. Matelas, couettes et oreillers sont fournis ; pensez à apporter <strong>draps et serviettes</strong>.</p><p>Indiquez dans le formulaire combien de personnes de votre famille dormiront sur place : la répartition est organisée par les mariés et vous sera confirmée.</p>" },
+    { q: "Puis-je répondre pour toute ma famille ?", a: "<p>Oui. Une seule réponse suffit pour vous, votre couple ou plusieurs membres de votre famille : indiquez simplement le nombre de personnes concernées et, si vous le souhaitez, leurs prénoms.</p>" },
+    { q: "Jusqu'à quand puis-je répondre ?", a: "<p>Idéalement <strong>avant le 10 janvier 2027</strong>, pour nous laisser le temps d'organiser les repas et les couchages.</p>" },
     { q: "Puis-je modifier ma réponse ?", a: "<p>Oui. Après l'envoi, un lien « Modifier votre réponse » s'affiche : conservez-le (une capture d'écran suffit). Si vous l'avez perdu, écrivez-nous et nous mettrons votre réponse à jour.</p>" },
     { q: "Le brunch est-il ouvert à tous ?", a: "<p>Oui : que vous ayez dormi au domaine ou non, vous êtes les bienvenus au brunch du dimanche à partir de 10h30.</p>" }
   ],
 
   /* --- Mention de confidentialité --------------------------------- */
-  privacy: "Les informations transmises via le formulaire (nom, coordonnées, présences, régime alimentaire, demande de couchage) sont utilisées uniquement par Agathe et Lucas pour l'organisation du mariage. Elles sont enregistrées dans un tableur Google privé, ne sont partagées avec personne et seront supprimées après l'événement. Pour toute modification ou suppression, écrivez-nous.",
+  privacy: "Les informations transmises via le formulaire (noms, coordonnées, présences, régime alimentaire, demande de couchage) sont utilisées uniquement par Agathe et Lucas pour l'organisation du mariage. Elles sont enregistrées dans un tableur Google privé, ne sont partagées avec personne et seront supprimées après l'événement. Pour toute modification ou suppression, écrivez-nous.",
 
   /* --- Options ---------------------------------------------------- */
   envelopeIntro: true   // false pour désactiver l'ouverture en enveloppe
@@ -700,6 +726,18 @@ const CONFIG = {
     const v = CONFIG[el.dataset.text];
     if (v !== undefined) el.textContent = v;
   });
+
+  /* ---------- Motif toile de Jouy ---------- */
+  if (CONFIG.photos.toile) document.documentElement.style.setProperty("--toile", 'url("' + CONFIG.photos.toile + '")');
+
+  /* ---------- Repères des deux jours (I / II) et date limite ---------- */
+  $("#heroDays").innerHTML = CONFIG.days.map((d, i) =>
+    (i ? '<span class="sep" aria-hidden="true"></span>' : "") +
+    `<span><span class="day-num" aria-hidden="true">${d.num}</span>${d.day} ${d.date}</span>`).join("");
+  if (CONFIG.rsvpDeadline) {
+    $("#heroDeadline").innerHTML = `Merci de nous répondre <strong>avant le ${CONFIG.rsvpDeadline}</strong>`;
+    $("#rsvpDeadline").innerHTML = `Réponse souhaitée <strong>avant le ${CONFIG.rsvpDeadline}</strong>`;
+  }
 
   /* ---------- Prénoms animés ---------- */
   const names = $("#names");
@@ -773,12 +811,12 @@ const CONFIG = {
   /* ---------- Programme (onglets accessibles) ---------- */
   const tabs = $("#tabs"), panels = $("#panels");
   tabs.innerHTML = CONFIG.days.map((d, i) => `
-    <button class="tab" role="tab" id="tab-${d.id}" aria-controls="panel-${d.id}" aria-selected="${i===1}" tabindex="${i===1?0:-1}">
-      <span class="tab__day">${d.day}</span><span class="tab__date">${d.date}</span><span class="tab__name">${d.name}</span>
+    <button class="tab" role="tab" id="tab-${d.id}" aria-controls="panel-${d.id}" aria-selected="${i===0}" tabindex="${i===0?0:-1}">
+      <span class="tab__num" aria-hidden="true">${d.num || ""}</span><span class="tab__day">${d.day}</span><span class="tab__date">${d.date}</span><span class="tab__name">${d.name}</span>
     </button>`).join("");
   panels.innerHTML = CONFIG.days.map((d, i) => `
-    <div class="panel" role="tabpanel" id="panel-${d.id}" aria-labelledby="tab-${d.id}" tabindex="0" ${i===1?"":"hidden"}>
-      <div class="panel__intro"><h3 class="panel__title">${d.title}</h3><p class="lede" style="margin:0">${d.full}</p></div>
+    <div class="panel" role="tabpanel" id="panel-${d.id}" aria-labelledby="tab-${d.id}" tabindex="0" ${i===0?"":"hidden"}>
+      <div class="panel__intro"><h3 class="panel__title"><span class="panel__num" aria-hidden="true">${d.num || ""}</span>${d.title}</h3><p class="lede" style="margin:0">${d.full}</p></div>
       <ol class="timeline">${d.items.map((it, j) => `
         <li class="tl-item" style="--i:${j}">
           <div class="tl-time${it.soft ? " is-soft" : ""}">${it.time}</div>
@@ -814,8 +852,9 @@ const CONFIG = {
   /* ---------- Lieux ---------- */
   $("#venues").innerHTML = CONFIG.venues.map((v, i) => `
     <article class="venue reveal" style="--d:${i*0.12}s">
-      <div class="photo" data-photo-venue="${v.photo}" data-num="${["I","II","III"][i] || i+1}" data-town="${v.town || ""}"></div>
-      <p class="venue__num">${["I","II","III"][i] || i+1} · ${v.label}</p>
+      <div class="photo" data-alt="${v.name}" data-photo-venue="${v.photo}" data-num="${v.num || ""}" data-town="${v.town || ""}"></div>
+      ${v.credit ? `<p class="venue__credit">${v.credit}</p>` : ""}
+      <p class="venue__num"><span class="day-num">${v.num || ""}</span> · ${v.label}</p>
       <h3>${v.name}</h3>
       <p>${v.text}</p>
       <address>${v.address}</address>
@@ -828,7 +867,9 @@ const CONFIG = {
     const src = CONFIG.photos[slot.dataset.photoVenue];
     const ph = `<div class="photo__ph"><span class="venue__big">${slot.dataset.num}</span><small>${slot.dataset.town}</small></div>`;
     if (!src) { slot.classList.add("is-empty"); slot.innerHTML = ph; return; }
-    const img = new Image(); img.loading = "lazy"; img.alt = ""; img.onerror = () => slot.innerHTML = ph; img.src = src; slot.appendChild(img);
+    const img = new Image(); img.loading = "lazy"; img.alt = slot.dataset.alt || ""; img.onerror = () => slot.innerHTML = ph;
+    if (CONFIG.photoPosition && CONFIG.photoPosition[slot.dataset.photoVenue]) img.style.objectPosition = CONFIG.photoPosition[slot.dataset.photoVenue];
+    img.src = src; slot.appendChild(img);
   });
 
   /* ---------- Hébergement ---------- */
@@ -873,9 +914,9 @@ const CONFIG = {
         <h3>Le formulaire arrive bientôt</h3>
         <p>Le questionnaire de réponse n'est pas encore connecté : <strong>aucune réponse ne peut être envoyée depuis cette page pour le moment.</strong> Voici ce qu'il vous demandera :</p>
         <ol class="demo__parts">
-          <li><div><strong>Vos coordonnées</strong><span>Prénom, nom, e-mail et téléphone (facultatifs)</span></div></li>
-          <li><div><strong>Votre présence</strong><span>Cérémonie civile, cérémonie religieuse, réception, brunch</span></div></li>
-          <li><div><strong>L'hébergement</strong><span>Demande de couchage au domaine et contraintes éventuelles</span></div></li>
+          <li><div><strong>Vos coordonnées</strong><span>Votre nom, le nombre de personnes concernées et, si vous le souhaitez, leurs prénoms</span></div></li>
+          <li><div><strong>Votre présence</strong><span>Samedi 22 mai et dimanche 23 mai</span></div></li>
+          <li><div><strong>L'hébergement</strong><span>Combien de personnes de votre famille dormiront au domaine</span></div></li>
           <li><div><strong>Régimes & allergies</strong><span>Végétarien, végétalien, sans porc, sans gluten, allergies…</span></div></li>
           <li><div><strong>La musique</strong><span>La chanson qui vous fera danser, et un mot pour les mariés</span></div></li>
         </ol>

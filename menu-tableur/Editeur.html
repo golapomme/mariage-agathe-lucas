@@ -12,8 +12,8 @@
   .f{margin:9px 0 0}
   .f > span{display:block;font-weight:bold;font-size:12px;margin-bottom:4px}
   .f > span i{color:#682F40;font-style:normal}
-  input[type=text],textarea{width:100%;padding:7px 9px;border:1px solid #DCD2C7;border-radius:4px;background:#fff;font:inherit;color:inherit}
-  input[type=text]:focus,textarea:focus{outline:2px solid #E8C8C5;border-color:#682F40}
+  input[type=text],input[type=number],textarea{width:100%;padding:7px 9px;border:1px solid #DCD2C7;border-radius:4px;background:#fff;font:inherit;color:inherit}
+  input[type=text]:focus,input[type=number]:focus,textarea:focus{outline:2px solid #E8C8C5;border-color:#682F40}
   textarea{min-height:54px;resize:vertical}
   .seg{display:flex;gap:4px}
   .seg label{flex:1;text-align:center;padding:6px 2px;border:1px solid #DCD2C7;border-radius:4px;background:#fff;cursor:pointer;font-size:12px;user-select:none}
@@ -110,6 +110,10 @@
         var ta = el('textarea', { id: 'c' + idx });
         ta.value = val;
         f.appendChild(ta);
+      } else if (c.type === 'nombre') {
+        var nbx = el('input', { type: 'number', min: '0', step: '1', id: 'c' + idx });
+        nbx.value = val;
+        f.appendChild(nbx);
       } else {
         var it = el('input', { type: 'text', id: 'c' + idx });
         it.value = val;
